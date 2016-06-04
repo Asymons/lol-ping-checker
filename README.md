@@ -13,7 +13,7 @@ Client pings the server 100 times to get an average ping and determine the maxim
 
 #How to Use
 
-Simply run the code above in any Java IDE, export the code above into a runnable jar (or download here) or any other means of running java code and the program will run.
+Simply run the code above in any Java IDE, export the code above into a runnable jar (or download at https://www.dropbox.com/s/tsi99d0b7p8sfhf/AsymonsLOLPingChecker.jar?dl=0) or any other means of running java code and the program will run.
 
 To use the program, simply select the server using the buttons above with the abbreviations corresponding to your server and select start. 
 
