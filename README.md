@@ -3,6 +3,14 @@
 Simple League of Legends ping checker that uses ICMP to accurately determine ping.
 Client pings the server 100 times to get an average ping and determine the maximum and minimum ranges.
 
+#Features
+
+-Ping Checker (Max, Min, Average)
+
+-IP Checker
+
+-Supports 5 servers
+
 #How to Use
 
 Simply run the code above in any Java IDE, export the code above into a runnable jar (or download here) or any other means of running java code and the program will run.
