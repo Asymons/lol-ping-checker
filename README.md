@@ -7,6 +7,8 @@ Client pings the server 100 times to get an average ping and determine the maxim
 
 Simply run the code above in any Java IDE, export the code above into a runnable jar (or download here) or any other means of running java code and the program will run.
 
+To use the program, simply select the server using the buttons above with the abbreviations corresponding to your server and select start. 
+
 ![alt text](https://i.gyazo.com/b01334031cce172361ce2137be1fc6de.png "Logo Title Text 1")
 
 
