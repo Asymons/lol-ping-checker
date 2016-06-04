@@ -2,7 +2,10 @@ import java.awt.EventQueue;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.InputStreamReader;
+import java.net.URL;
 import java.net.UnknownHostException;
 
 import javax.swing.ButtonGroup;
@@ -14,8 +17,6 @@ import javax.swing.JProgressBar;
 import javax.swing.JRadioButton;
 import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
-import javax.swing.event.ChangeEvent;
-import javax.swing.event.ChangeListener;
 
 public class GUI extends JFrame {
 
@@ -27,6 +28,7 @@ public class GUI extends JFrame {
 	private String selectedServer = "";
 	public static JProgressBar progressBar;
 	private final ButtonGroup buttonGroup = new ButtonGroup();
+	private JTextField textField_3;
 
 	/**
 	 * Launch the application.
@@ -64,6 +66,15 @@ public class GUI extends JFrame {
 	    Thread t = new Thread(runner, "Code Executer");
 	    t.start();
 	}
+	
+	private String getIp() throws Exception{
+		URL whatismyip = new URL("http://checkip.amazonaws.com");
+		BufferedReader in = new BufferedReader(new InputStreamReader(
+		                whatismyip.openStream()));
+
+		String ip = in.readLine(); //you get the IP as a String
+		return ip;
+	}
 
 	/**
 	 * Create the frame.
@@ -93,19 +104,19 @@ public class GUI extends JFrame {
 		contentPane.add(lblAsymonsLeagueOf);
 
 		textField = new JTextField();
-		textField.setBounds(146, 102, 86, 20);
+		textField.setBounds(146, 81, 86, 20);
 
 		contentPane.add(textField);
 		textField.setColumns(10);
 
 		textField_1 = new JTextField();
-		textField_1.setBounds(146, 116, 86, 20);
+		textField_1.setBounds(146, 102, 86, 20);
 
 		contentPane.add(textField_1);
 		textField_1.setColumns(10);
 
 		textField_2 = new JTextField();
-		textField_2.setBounds(146, 133, 86, 20);
+		textField_2.setBounds(146, 123, 86, 20);
 
 		contentPane.add(textField_2);
 		textField_2.setColumns(10);
@@ -143,19 +154,16 @@ public class GUI extends JFrame {
 		progressBar.setValue(index);
 		progressBar.repaint();
 		System.out.println(progressBar.getValue());
-		
-		
-//		progressBar.addChangeListener(new ChangeListener(){
-//			@Override
-//			public void stateChanged(ChangeEvent e) {
-//				JProgressBar change = (JProgressBar)e.getSource();
-//				System.out.println("Change Changed: " + change.getValue());
-//				
-//			}
-//			
-//		});
-		
 		contentPane.add(progressBar);
+		
+		textField_3 = new JTextField();
+		textField_3.setBounds(20, 81, 86, 20);
+		contentPane.add(textField_3);
+		try {
+			textField_3.setText(getIp());
+		} catch (Exception e2) {
+		}
+		textField_3.setColumns(10);
 
 		btnStart.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -166,6 +174,8 @@ public class GUI extends JFrame {
 				}
 			}
 		});
+		
+		
 
 	}
 }

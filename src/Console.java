@@ -6,9 +6,6 @@ public class Console {
 	
 	
 	public static void pingChecker(String server) throws UnknownHostException, IOException, InterruptedException{
-		
-		
-		
 		Runnable runner = new Runnable()
 	    {
 	        public void run() {
@@ -27,7 +24,6 @@ public class Console {
 	    		    try {
 						inet.isReachable(5000);
 					} catch (IOException e) {
-						// TODO Auto-generated catch block
 						e.printStackTrace();
 					}
 	    		    long end = System.currentTimeMillis() - start;
@@ -52,5 +48,6 @@ public class Console {
 	    t.start();
 		
 	}
+	
 
 }
