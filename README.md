@@ -3,6 +3,8 @@
 Simple League of Legends ping checker that uses ICMP to accurately determine ping.
 Client pings the server 100 times to get an average ping and determine the maximum and minimum ranges.
 
+VirusTotal: https://virustotal.com/en/file/46d6c9caf250f0e1d2f8d0b0c8acb69f69e080c3b8fa734d43856a54b9e16f86/analysis/1465066655/
+
 #Features
 
 -Ping Checker (Max, Min, Average)
